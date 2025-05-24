@@ -48,7 +48,7 @@ class CustomWidgets {
       child: Card(
         child: Image.asset(
           "assets/images/auth_screen/google.jpeg",
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
           height: 50.h,
           width: 50.w,
         ),
@@ -62,7 +62,7 @@ class CustomWidgets {
       child: Card(
         child: Image.asset(
           "assets/images/auth_screen/facebook.jpeg",
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
           height: 50.h,
           width: 50.w,
         ),
