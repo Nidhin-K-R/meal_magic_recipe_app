@@ -48,6 +48,7 @@ class CustomWidgets {
       child: Card(
         child: Image.asset(
           "assets/images/auth_screen/google.jpeg",
+          fit: BoxFit.cover,
           height: 50.h,
           width: 50.w,
         ),
@@ -61,6 +62,7 @@ class CustomWidgets {
       child: Card(
         child: Image.asset(
           "assets/images/auth_screen/facebook.jpeg",
+          fit: BoxFit.cover,
           height: 50.h,
           width: 50.w,
         ),
@@ -75,7 +77,7 @@ class CustomWidgets {
         label,
         style: TextStyle(
           color: Colors.orange,
-          fontSize: 20,
+          fontSize: 20.sp,
           fontWeight: FontWeight.bold,
         ),
       ),
