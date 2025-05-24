@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_magic_app/features/authentication/presentation/widgets/custom_widgets.dart';
+import 'package:meal_magic_app/features/splashscreen/splash_screen.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -51,7 +52,12 @@ class _SignupPageState extends State<SignupPage> {
               SizedBox(height: 5.h),
               CustomWidgets.textField("Confirm Password"),
               SizedBox(height: 25.h),
-              CustomWidgets.button("Sign Up", () {}),
+              CustomWidgets.button("Sign Up", () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (ctx) => SplashScreen()),
+                );
+              }),
               SizedBox(height: 20.h),
               Row(
                 children: [

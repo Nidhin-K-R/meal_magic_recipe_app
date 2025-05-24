@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:meal_magic_app/bottom_nav_bar.dart';
+import 'package:meal_magic_app/features/authentication/presentation/pages/signup_page.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -45,7 +45,7 @@ class SplashScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (ctx) => BottomNavBar()),
+                  MaterialPageRoute(builder: (ctx) => SignupPage()),
                 );
               },
               icon: Icon(
