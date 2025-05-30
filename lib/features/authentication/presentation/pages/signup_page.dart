@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:meal_magic_app/features/authentication/presentation/pages/login_page.dart';
 import 'package:meal_magic_app/features/authentication/presentation/widgets/custom_widgets.dart';
 import 'package:meal_magic_app/features/splashscreen/splash_screen.dart';
 
@@ -106,7 +107,12 @@ class _SignupPageState extends State<SignupPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  CustomWidgets.textButton("Log In", () {}),
+                  CustomWidgets.textButton("Log In", () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (ctx) => LoginPage()),
+                    );
+                  }, 20),
                 ],
               ),
             ],
