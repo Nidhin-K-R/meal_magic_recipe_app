@@ -49,8 +49,8 @@ class CustomWidgets {
         child: Image.asset(
           "assets/images/auth_screen/google.jpeg",
           fit: BoxFit.fill,
-          height: 50.h,
-          width: 50.w,
+          height: 60.r,
+          width: 60.r,
         ),
       ),
     );
@@ -63,8 +63,8 @@ class CustomWidgets {
         child: Image.asset(
           "assets/images/auth_screen/facebook.jpeg",
           fit: BoxFit.fill,
-          height: 50.h,
-          width: 50.w,
+          height: 60.r,
+          width: 60.r,
         ),
       ),
     );
