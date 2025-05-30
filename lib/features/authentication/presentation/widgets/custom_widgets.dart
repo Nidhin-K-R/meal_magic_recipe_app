@@ -30,7 +30,7 @@ class CustomWidgets {
         "Sign Up",
         style: TextStyle(
           color: Colors.white,
-          fontSize: 20,
+          fontSize: 20.sp,
           fontWeight: FontWeight.bold,
         ),
       ),
