@@ -3,8 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_magic_app/core/constants/colors.dart';
 
 class CustomWidgets {
-  static textField(String label) {
+  static textField(String label, var controller) {
     return TextField(
+      controller: controller,
       decoration: InputDecoration(
         labelText: label,
         labelStyle: TextStyle(color: Colors.black26),
