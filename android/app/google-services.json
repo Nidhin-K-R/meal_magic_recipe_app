@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "788629469539",
+    "project_id": "meal-magic-85ba7",
+    "storage_bucket": "meal-magic-85ba7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788629469539:android:43ae2b161b77c1d1187b56",
+        "android_client_info": {
+          "package_name": "com.example.meal_magic_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgAYtnNenSPPZyghSK6i9V9uDfx7yX_Z0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
