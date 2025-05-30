@@ -19,7 +19,7 @@ class CustomWidgets {
   static inputText(String label) {
     return Text(
       label,
-      style: TextStyle(fontSize: 15.h, fontWeight: FontWeight.bold),
+      style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
     );
   }
 
