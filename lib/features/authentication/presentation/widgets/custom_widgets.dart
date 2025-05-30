@@ -70,14 +70,14 @@ class CustomWidgets {
     );
   }
 
-  static textButton(String label, VoidCallback onPressed) {
+  static textButton(String label, VoidCallback onPressed, int size) {
     return TextButton(
       onPressed: onPressed,
       child: Text(
         label,
         style: TextStyle(
           color: Colors.orange,
-          fontSize: 20.sp,
+          fontSize: size.sp,
           fontWeight: FontWeight.bold,
         ),
       ),
