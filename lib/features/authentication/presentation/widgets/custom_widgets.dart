@@ -27,7 +27,7 @@ class CustomWidgets {
     return ElevatedButton(
       onPressed: onPressed,
       child: Text(
-        "Sign Up",
+        label,
         style: TextStyle(
           color: Colors.white,
           fontSize: 20.sp,
