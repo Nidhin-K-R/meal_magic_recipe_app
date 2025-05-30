@@ -23,16 +23,16 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SizedBox(height: 200.h),
+            SizedBox(height: 300.h),
             Text(
               "Get Cooking",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 60.sp,
+                fontSize: 60.r,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
-                letterSpacing: 5.sp,
-                height: 0.8.h,
+                letterSpacing: 5.h,
+                height: 1.5.h,
               ),
             ),
             SizedBox(height: 10.h),
@@ -40,7 +40,7 @@ class SplashScreen extends StatelessWidget {
               "Simple way to find Tasty Recipe",
               style: TextStyle(fontSize: 18.sp, color: Colors.white38),
             ),
-            SizedBox(height: 30.h),
+            SizedBox(height: 30.r),
             IconButton(
               onPressed: () {
                 Navigator.push(
@@ -50,11 +50,11 @@ class SplashScreen extends StatelessWidget {
               },
               icon: Icon(
                 Icons.arrow_forward_rounded,
-                size: 70.sp,
+                size: 70.r,
                 color: Colors.black54,
               ),
             ),
-            SizedBox(height: 50.h),
+            SizedBox(height: 20.h),
           ],
         ),
       ),
