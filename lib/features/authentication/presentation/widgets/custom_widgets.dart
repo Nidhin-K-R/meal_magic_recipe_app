@@ -3,8 +3,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_magic_app/core/constants/colors.dart';
 
 class CustomWidgets {
-  static textField(String label, var controller) {
+  static FocusNode name = FocusNode();
+  static FocusNode email = FocusNode();
+  static FocusNode password = FocusNode();
+  static FocusNode cPassword = FocusNode();
+
+  static textField(
+    String label,
+    var controller,
+    var focusNode,
+    BuildContext context,
+    var nextFocus,
+  ) {
     return TextField(
+      focusNode: focusNode,
+      onSubmitted: (value) {
+        FocusScope.of(context).requestFocus(nextFocus);
+      },
       controller: controller,
       decoration: InputDecoration(
         labelText: label,
@@ -50,8 +65,8 @@ class CustomWidgets {
         child: Image.asset(
           "assets/images/auth_screen/google.jpeg",
           fit: BoxFit.fill,
-          height: 60.r,
-          width: 60.r,
+          height: 50.r,
+          width: 50.r,
         ),
       ),
     );
@@ -64,8 +79,8 @@ class CustomWidgets {
         child: Image.asset(
           "assets/images/auth_screen/facebook.jpeg",
           fit: BoxFit.fill,
-          height: 60.r,
-          width: 60.r,
+          height: 50.r,
+          width: 50.r,
         ),
       ),
     );

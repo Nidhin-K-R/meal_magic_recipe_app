@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:meal_magic_app/core/network/auth/auth_service.dart';
+
 import 'package:meal_magic_app/features/authentication/presentation/pages/signup_page.dart';
 import 'package:meal_magic_app/features/authentication/presentation/widgets/custom_widgets.dart';
 
@@ -32,9 +32,9 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 70.h),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 70.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -46,11 +46,23 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 60.h),
               CustomWidgets.inputText("Email"),
               SizedBox(height: 5.h),
-              CustomWidgets.textField("Enter Email", emailController),
+              CustomWidgets.textField(
+                "Enter Email",
+                emailController,
+                CustomWidgets.email,
+                context,
+                CustomWidgets.password,
+              ),
               SizedBox(height: 15.h),
               CustomWidgets.inputText("Password"),
               SizedBox(height: 5.h),
-              CustomWidgets.textField("Enter Password", passwordController),
+              CustomWidgets.textField(
+                "Enter Password",
+                passwordController,
+                CustomWidgets.password,
+                context,
+                CustomWidgets.password,
+              ),
               SizedBox(height: 10.h),
               CustomWidgets.textButton("Forgot Password ?", () {}, 15),
               SizedBox(height: 10.h),

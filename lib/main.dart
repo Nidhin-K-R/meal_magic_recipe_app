@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:meal_magic_app/features/authentication/presentation/pages/signup_page.dart';
+
 import 'package:firebase_core/firebase_core.dart';
+import 'package:meal_magic_app/features/splashscreen/splash_screen.dart';
 import 'core/network/firebase_options.dart';
 
 void main() async {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: SignupPage(),
+          home: SplashScreen(),
         );
       },
     );
