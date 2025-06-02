@@ -44,35 +44,42 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Text("Welcome Back!", style: TextStyle(fontSize: 20.sp)),
               SizedBox(height: 60.h),
-              CustomWidgets.inputText("Email"),
+              CustomWidgets.inputText(label: "Email"),
               SizedBox(height: 5.h),
               CustomWidgets.textField(
-                "Enter Email",
-                emailController,
-                CustomWidgets.email,
-                context,
-                CustomWidgets.password,
+                label: "Enter Email",
+                controller: emailController,
+                focusNode: CustomWidgets.email2,
+                context: context,
+                nextFocus: CustomWidgets.password,
               ),
               SizedBox(height: 15.h),
-              CustomWidgets.inputText("Password"),
+              CustomWidgets.inputText(label: "Password"),
               SizedBox(height: 5.h),
               CustomWidgets.textField(
-                "Enter Password",
-                passwordController,
-                CustomWidgets.password,
-                context,
-                CustomWidgets.password,
+                label: "Enter Password",
+                controller: passwordController,
+                focusNode: CustomWidgets.password,
+                context: context,
+                nextFocus: CustomWidgets.password,
               ),
               SizedBox(height: 10.h),
-              CustomWidgets.textButton("Forgot Password ?", () {}, 15),
+              CustomWidgets.textButton(
+                label: "Forgot Password ?",
+                onPressed: () {},
+                size: 15,
+              ),
               SizedBox(height: 10.h),
-              CustomWidgets.button("Log in", () {
-                setState(() {
-                  logIn();
-                  emailController.clear();
-                  passwordController.clear();
-                });
-              }),
+              CustomWidgets.button(
+                label: "Log in",
+                onPressed: () {
+                  setState(() {
+                    logIn();
+                    emailController.clear();
+                    passwordController.clear();
+                  });
+                },
+              ),
               SizedBox(height: 20.h),
               Row(
                 children: [
@@ -105,8 +112,8 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  CustomWidgets.googleButton(() {}),
-                  CustomWidgets.facebookButton(() {}),
+                  CustomWidgets.googleButton(onPressed: () {}),
+                  CustomWidgets.facebookButton(onPressed: () {}),
                 ],
               ),
               SizedBox(height: 10.h),
@@ -121,12 +128,16 @@ class _LoginPageState extends State<LoginPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  CustomWidgets.textButton("Sign In", () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (ctx) => SignupPage()),
-                    );
-                  }, 20),
+                  CustomWidgets.textButton(
+                    label: "Sign In",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (ctx) => SignupPage()),
+                      );
+                    },
+                    size: 20,
+                  ),
                 ],
               ),
             ],

@@ -62,53 +62,56 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
               SizedBox(height: 30.h),
-              CustomWidgets.inputText("Name"),
+              CustomWidgets.inputText(label: "Name"),
               SizedBox(height: 5.h),
               CustomWidgets.textField(
-                "Enter Name",
-                nameController,
-                CustomWidgets.name,
-                context,
-                CustomWidgets.email,
+                label: "Enter Name",
+                controller: nameController,
+                focusNode: CustomWidgets.name,
+                context: context,
+                nextFocus: CustomWidgets.email,
               ),
               SizedBox(height: 15.h),
-              CustomWidgets.inputText("Email"),
+              CustomWidgets.inputText(label: "Email"),
               SizedBox(height: 5.h),
               CustomWidgets.textField(
-                "Enter Email",
-                emailController,
-                CustomWidgets.email,
-                context,
-                CustomWidgets.password,
+                label: "Enter Email",
+                controller: emailController,
+                focusNode: CustomWidgets.email,
+                context: context,
+                nextFocus: CustomWidgets.password,
               ),
               SizedBox(height: 15.h),
-              CustomWidgets.inputText("Password"),
+              CustomWidgets.inputText(label: "Password"),
               SizedBox(height: 5.h),
               CustomWidgets.textField(
-                "Enter Password",
-                passwordController,
-                CustomWidgets.password,
-                context,
-                CustomWidgets.cPassword,
+                label: "Enter Password",
+                controller: passwordController,
+                focusNode: CustomWidgets.password,
+                context: context,
+                nextFocus: CustomWidgets.cPassword,
               ),
               SizedBox(height: 15.h),
-              CustomWidgets.inputText("Confirm Password"),
+              CustomWidgets.inputText(label: "Confirm Password"),
               SizedBox(height: 5.h),
               CustomWidgets.textField(
-                "Confirm Password",
-                cPasswordController,
-                CustomWidgets.cPassword,
-                context,
-                CustomWidgets.cPassword,
+                label: 'Confirm Password',
+                controller: cPasswordController,
+                focusNode: CustomWidgets.cPassword,
+                context: context,
+                nextFocus: CustomWidgets.cPassword,
               ),
               SizedBox(height: 25.h),
-              CustomWidgets.button("Sign Up", () {
-                signUp();
-                nameController.clear();
-                emailController.clear();
-                passwordController.clear();
-                cPasswordController.clear();
-              }),
+              CustomWidgets.button(
+                label: "Sign Up",
+                onPressed: () {
+                  signUp();
+                  nameController.clear();
+                  emailController.clear();
+                  passwordController.clear();
+                  cPasswordController.clear();
+                },
+              ),
               SizedBox(height: 20.h),
               Row(
                 children: [
@@ -141,8 +144,8 @@ class _SignupPageState extends State<SignupPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  CustomWidgets.googleButton(() {}),
-                  CustomWidgets.facebookButton(() {}),
+                  CustomWidgets.googleButton(onPressed: () {}),
+                  CustomWidgets.facebookButton(onPressed: () {}),
                 ],
               ),
               SizedBox(height: 5.h),
@@ -157,12 +160,16 @@ class _SignupPageState extends State<SignupPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  CustomWidgets.textButton("Log In", () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (ctx) => LoginPage()),
-                    );
-                  }, 20),
+                  CustomWidgets.textButton(
+                    label: "Log In",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (ctx) => LoginPage()),
+                      );
+                    },
+                    size: 20,
+                  ),
                 ],
               ),
             ],

@@ -7,14 +7,15 @@ class CustomWidgets {
   static FocusNode email = FocusNode();
   static FocusNode password = FocusNode();
   static FocusNode cPassword = FocusNode();
+  static FocusNode email2 = FocusNode();
 
-  static textField(
-    String label,
-    var controller,
-    var focusNode,
-    BuildContext context,
-    var nextFocus,
-  ) {
+  static textField({
+    required String label,
+    required var controller,
+    required var focusNode,
+    required BuildContext context,
+    required var nextFocus,
+  }) {
     return TextField(
       focusNode: focusNode,
       onSubmitted: (value) {
@@ -32,14 +33,14 @@ class CustomWidgets {
     );
   }
 
-  static inputText(String label) {
+  static inputText({required String label}) {
     return Text(
       label,
       style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
     );
   }
 
-  static button(String label, VoidCallback onPressed) {
+  static button({required String label, required VoidCallback onPressed}) {
     return ElevatedButton(
       onPressed: onPressed,
       child: Text(
@@ -58,7 +59,7 @@ class CustomWidgets {
     );
   }
 
-  static googleButton(VoidCallback onPressed) {
+  static googleButton({required VoidCallback onPressed}) {
     return InkWell(
       onTap: onPressed,
       child: Card(
@@ -72,7 +73,7 @@ class CustomWidgets {
     );
   }
 
-  static facebookButton(VoidCallback onPressed) {
+  static facebookButton({required VoidCallback onPressed}) {
     return InkWell(
       onTap: onPressed,
       child: Card(
@@ -86,7 +87,11 @@ class CustomWidgets {
     );
   }
 
-  static textButton(String label, VoidCallback onPressed, int size) {
+  static textButton({
+    required String label,
+    required VoidCallback onPressed,
+    required int size,
+  }) {
     return TextButton(
       onPressed: onPressed,
       child: Text(
