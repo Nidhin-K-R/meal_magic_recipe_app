@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:meal_magic_app/core/constants/colors.dart';
+import 'package:meal_magic_app/core/constants/appConstants.dart';
 
 class CustomWidgets {
   static FocusNode name = FocusNode();
   static FocusNode email = FocusNode();
   static FocusNode password = FocusNode();
   static FocusNode cPassword = FocusNode();
-  static FocusNode email2 = FocusNode();
+  static FocusNode lemail = FocusNode();
+  static FocusNode lpassword = FocusNode();
+  static FocusNode lButton = FocusNode();
+  static FocusNode sButton = FocusNode();
 
   static textField({
     required String label,
@@ -15,12 +18,20 @@ class CustomWidgets {
     required var focusNode,
     required BuildContext context,
     required var nextFocus,
+    required String validatorString,
   }) {
-    return TextField(
-      focusNode: focusNode,
-      onSubmitted: (value) {
+    return TextFormField(
+      onFieldSubmitted: (value) {
         FocusScope.of(context).requestFocus(nextFocus);
       },
+
+      focusNode: focusNode,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return validatorString;
+        }
+      },
+
       controller: controller,
       decoration: InputDecoration(
         labelText: label,
@@ -40,8 +51,13 @@ class CustomWidgets {
     );
   }
 
-  static button({required String label, required VoidCallback onPressed}) {
+  static button({
+    required String label,
+    required VoidCallback onPressed,
+    required var focusNode,
+  }) {
     return ElevatedButton(
+      focusNode: focusNode,
       onPressed: onPressed,
       child: Text(
         label,
@@ -52,7 +68,7 @@ class CustomWidgets {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: buttonColor,
+        backgroundColor: appThemeColor,
         minimumSize: Size(double.infinity, 50.h),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       ),
